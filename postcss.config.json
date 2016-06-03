@@ -1,0 +1,44 @@
+{
+  "use": [
+    "postcss-import",
+    "cq-prolyfill/postcss-plugin",
+    "postcss-apply",
+    "precss",
+    "postcss-cssnext",
+    "postcss-assets",
+    "postcss-font-magician",
+    "postcss-hexrgba",
+    "cssnano",
+    "postcss-reporter"
+  ],
+  "input": "src/css/styles.css",
+  "output": "dist/styles.css",
+  "map": true,
+  "local-plugins": true,
+  "autoprefixer": {
+    "browsers": "> 2%"
+  },
+  "postcss-assets": {
+    "basePath": "src/",
+    "cachebuster": true,
+    "loadPaths": ["img/"],
+    "relative": true
+  },
+  "postcss-font-magician": {
+    "foundries": ["custom", "hosted", "google"]
+  },
+  "cssnano": {
+    "autoprefixer": false,
+    "calc": false,
+    "colormin": false,
+    "discardComments": {
+      "removeAll": true
+    },
+    "discardUnused": false,
+    "filterPlugins": false,
+    "normalizeUrl": false,
+    "reduceIdents": false,
+    "styleCache": false,
+    "zindex": false
+  }
+}
