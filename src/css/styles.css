@@ -5,10 +5,124 @@
 /* Vendor */
 @import "normalize.css";
 
-/*
-Base
+:root {
+  --color-mint: #c7ddd1;
+  --color-mint-dark: #92b7a4;
+}
 
-Weight: 1
+* {
+  box-sizing: border-box;
 
-Styleguide Base
-*/
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html {
+  font-size: 12px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: 940px) {
+    font-size: 16px;
+  }
+}
+
+body {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 3rem 3rem 3rem;
+  background: url("img/bg.png") repeat-x;
+  text-align: center;
+
+  @media screen and (max-width: 939px) {
+    background: var(--color-mint);
+  }
+
+  @media screen and (min-width: 940px) {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+
+.column {
+  flex: 1;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.site-photo {
+  margin: 0 auto -3rem auto;
+  border: 10px solid #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transform: rotate(-5deg) translateY(-15%);
+
+  @media screen and (max-width: 940px) {
+    max-width: 300px;
+  }
+}
+
+.site-title {
+  margin: auto;
+  margin-bottom: 2rem;
+
+  @media screen and (max-width: 939px) {
+    max-width: 300px;
+    padding-top: 2rem;
+  }
+}
+
+.tweets {
+  display: inline-block;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  border: 10px solid #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================================
+ * Buttons
+ * ========================================================================== */
+
+:root {
+  --button-reset {
+    padding: 0;
+    appearance: none;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    color: var(--base-font-color);
+    cursor: pointer;
+    -webkit-font-smoothing: inherit;
+    font-family: var(--base-font-family);
+    font-size: var(--base-font-size);
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    vertical-align: middle;
+  }
+}
+
+button {
+  @apply --button-reset;
+}
+
+.button {
+  @apply --button-reset;
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: var(--color-mint-dark);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px var(--color-mint-dark);
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
